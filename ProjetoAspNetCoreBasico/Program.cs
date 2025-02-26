@@ -1,10 +1,18 @@
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers(); // Adiciona suporte a controllers
+
+
 var app = builder.Build();
 
 //app.MapGet("/", () => "Hello World!");
 
 // Servir arquivos estáticos (HTML, CSS, JS)
 app.UseStaticFiles();
+app.UseRouting();
+
+app.MapControllers(); // Habilita os controllers
+
 
 // Definir a página inicial como index.html
 app.MapGet("/", async (HttpContext context) =>
