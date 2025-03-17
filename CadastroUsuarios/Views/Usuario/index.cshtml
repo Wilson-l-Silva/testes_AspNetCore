@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CadastroUsuarios.Models.Usuario>
+
+
+
+<h2>Lista de Usuários</h2>
+<a href="@Url.Action("Criar", "Usuario")" class="btn btn-primary">Novo Usuário</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Email</th>
+            <th>CPF</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var usuario in Model)
+        {
+            <tr>
+                <td>@usuario.Nome</td>
+                <td>@usuario.Idade</td>
+                <td>@usuario.Email</td>
+                <td>@usuario.Cpf</td>
+            </tr>
+        }
+    </tbody>
+</table>
