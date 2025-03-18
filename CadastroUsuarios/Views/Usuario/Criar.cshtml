@@ -1,36 +1,36 @@
-﻿@model CadastroUsuarios.Models.Usuario <!-- Define que esta view usa o modelo 'Usuario' -->
+﻿@model CadastroUsuarios.Models.Usuario 
+<!-- Define que esta view usa o modelo 'Usuario' -->
 
 <h2>Cadastrar Usuário</h2> <!-- Título da página -->
-
 <!-- Formulário que envia os dados para a ação 'Criar' no controlador 'Usuario' -->
 <form asp-action="Criar" method="post">
-    
+
     <!-- Campo para Nome -->
     <div class="form-group">
-        <label asp-for="Nome"></label> <!-- Gera automaticamente a label do campo Nome -->
-        <input asp-for="Nome" class="form-control" /> <!-- Input vinculado ao modelo Usuario.Nome -->
-        <span asp-validation-for="Nome" class="text-danger"></span> <!-- Exibe mensagens de validação caso o campo esteja inválido -->
+        <label></label> <!-- Gera automaticamente a label do campo Nome -->
+        <input class="form-control" /> <!-- Input vinculado ao modelo Usuario.Nome -->
+        <span class="text-danger"></span> <!-- Exibe mensagens de validação caso o campo esteja inválido -->
     </div>
 
     <!-- Campo para Idade -->
     <div class="form-group">
-        <label asp-for="Idade"></label> <!-- Gera automaticamente a label do campo Idade -->
-        <input asp-for="Idade" class="form-control" type="number" /> <!-- Input do tipo número -->
-        <span asp-validation-for="Idade" class="text-danger"></span> <!-- Exibe mensagens de erro -->
+        <label></label> <!-- Gera automaticamente a label do campo Idade -->
+        <input class="form-control" type="number" /> <!-- Input do tipo número -->
+        <span class="text-danger"></span> <!-- Exibe mensagens de erro -->
     </div>
 
     <!-- Campo para Email -->
     <div class="form-group">
-        <label asp-for="Email"></label> <!-- Gera automaticamente a label do campo Email -->
-        <input asp-for="Email" class="form-control" type="email" /> <!-- Input do tipo email -->
-        <span asp-validation-for="Email" class="text-danger"></span> <!-- Exibe mensagens de erro -->
+        <label></label> <!-- Gera automaticamente a label do campo Email -->
+        <input class="form-control" type="email" /> <!-- Input do tipo email -->
+        <span class="text-danger"></span> <!-- Exibe mensagens de erro -->
     </div>
 
     <!-- Campo para CPF -->
     <div class="form-group">
-        <label asp-for="Cpf"></label> <!-- Gera automaticamente a label do campo Cpf -->
-        <input asp-for="Cpf" class="form-control" maxlength="11" /> <!-- Input com limite de 11 caracteres -->
-        <span asp-validation-for="Cpf" class="text-danger"></span> <!-- Exibe mensagens de erro -->
+        <label></label> <!-- Gera automaticamente a label do campo Cpf -->
+        <input class="form-control" maxlength="11" /> <!-- Input com limite de 11 caracteres -->
+        <span class="text-danger"></span> <!-- Exibe mensagens de erro -->
     </div>
 
     <!-- Botão de envio do formulário -->
@@ -40,7 +40,7 @@
 <!-- Seção de scripts adicionais -->
 @section Scripts {
     @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial"); 
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
         /* Inclui scripts de validação do ASP.NET para validar os campos no lado do cliente */
     }
 }
