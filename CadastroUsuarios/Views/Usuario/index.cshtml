@@ -1,28 +1,33 @@
 ﻿@model IEnumerable<CadastroUsuarios.Models.Usuario>
+// Define que este arquivo de view recebe um modelo do tipo IEnumerable<Usuario>
+    , ou seja, uma lista de usuários.
 
+    <h2>Lista de Usuários</h2> // Título da página
 
+    // Botão que direciona o usuário para a página de criação de um novo usuário.
+    <a href="@Url.Action("Criar", "Usuario")" class="btn btn-primary">Novo Usuário</a>
+    // Url.Action("Criar", "Usuario") gera um link para a ação "Criar" dentro do controlador "Usuario".
+    // O botão estilizado com Bootstrap (btn btn-primary) permite que o usuário vá para a página de cadastro.
 
-<h2>Lista de Usuários</h2>
-<a href="@Url.Action("Criar", "Usuario")" class="btn btn-primary">Novo Usuário</a>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Email</th>
-            <th>CPF</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var usuario in Model)
-        {
+    <table class="table">
+        // Cria uma tabela estilizada usando Bootstrap
+        <thead>
             <tr>
-                <td>@usuario.Nome</td>
-                <td>@usuario.Idade</td>
-                <td>@usuario.Email</td>
-                <td>@usuario.Cpf</td>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Email</th>
+                <th>CPF</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model) // Itera sobre cada usuário dentro do modelo (a lista de usuários).
+            {
+                <tr>
+                    <td>@usuario.Nome</td> // Exibe o nome do usuário na célula da tabela.
+                    <td>@usuario.Idade</td> // Exibe a idade do usuário.
+                    <td>@usuario.Email</td> // Exibe o email do usuário.
+                    <td>@usuario.Cpf</td> // Exibe o CPF do usuário.
+                </tr>
+            }
+        </tbody>
+    </table>
